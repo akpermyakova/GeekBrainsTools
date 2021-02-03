@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SumOfOddPositiveNumbers", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckLoginAndPassword", "CheckLoginAndPassword\CheckLoginAndPassword.csproj", "{11B492C2-B7E5-472A-910D-EA61E881A367}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassIndexAndOutput", "c\MassIndexAndOutput.csproj", "{865ADB03-69A2-45E2-BF66-FBB53F2E6AB8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,10 @@ Global
 		{11B492C2-B7E5-472A-910D-EA61E881A367}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11B492C2-B7E5-472A-910D-EA61E881A367}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11B492C2-B7E5-472A-910D-EA61E881A367}.Release|Any CPU.Build.0 = Release|Any CPU
+		{865ADB03-69A2-45E2-BF66-FBB53F2E6AB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{865ADB03-69A2-45E2-BF66-FBB53F2E6AB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{865ADB03-69A2-45E2-BF66-FBB53F2E6AB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{865ADB03-69A2-45E2-BF66-FBB53F2E6AB8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -81,6 +87,7 @@ Global
 		{FF8E708D-0282-4BCB-9ED9-5011A2AB3F4D} = {E0790253-ABF6-4AFE-B825-F6D38EB8B6EB}
 		{9B75E4DD-0D07-4F62-8602-6743BD21064E} = {E0790253-ABF6-4AFE-B825-F6D38EB8B6EB}
 		{11B492C2-B7E5-472A-910D-EA61E881A367} = {E0790253-ABF6-4AFE-B825-F6D38EB8B6EB}
+		{865ADB03-69A2-45E2-BF66-FBB53F2E6AB8} = {E0790253-ABF6-4AFE-B825-F6D38EB8B6EB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F52B65D0-3710-40A0-A82D-D4AFA0BA9485}
