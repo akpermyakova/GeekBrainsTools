@@ -13,10 +13,6 @@
 #endregion
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CountOfGoodNumbers
 {
@@ -30,9 +26,15 @@ namespace CountOfGoodNumbers
             Console.WriteLine("Введите конечное значение диапазона:");
             var endValue = int.Parse(Console.ReadLine());
 
+            DateTime start = DateTime.Now;
+
             var count = GetCountOfGoodNumbers(startValue, endValue);
 
-            Console.WriteLine(count);
+            Console.WriteLine($"В диапазоне от {startValue} до {endValue} - {count} 'хороших' чисел");
+
+            DateTime finish = DateTime.Now;
+            Console.WriteLine($"На выполнение команды затрачено {finish - start}");
+
             Console.ReadKey();
 
         }
@@ -40,21 +42,18 @@ namespace CountOfGoodNumbers
         static int GetCountOfGoodNumbers(int startValue, int endValue)
         {
             var count = 0;
-            var list = Enumerable.Range(startValue, endValue - startValue);
-            
-            foreach(var i in list)
+            for(var i = startValue;  i<=endValue; i++)
             {
-                var sum = 0;
-                var stringValue = i.ToString();
-                foreach(char c in stringValue)
-                {
-                    sum += int.Parse(c.ToString());
-                }
-
+                var sum = GetSumOfDigitsValue(i);
                 if (i % sum == 0) count++;
             }
-
             return count;
+        }
+
+        static int GetSumOfDigitsValue(int value)
+        {
+            if (value == 0) return 0;
+            else return GetSumOfDigitsValue(value / 10) + value % 10;
         }
     }
 }
