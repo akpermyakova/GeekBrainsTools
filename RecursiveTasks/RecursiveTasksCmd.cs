@@ -28,11 +28,12 @@ namespace RecursiveTasks
             Console.WriteLine("Введите b:");
             var b = int.Parse(Console.ReadLine());
 
-            #if list
+#if list
             CreateList(a, b);
 
-            #elif sumList
+#elif sumList
             SumList(a, b);
+
 
             #else
             Console.WriteLine("Директива не определена. Укажите директиву");
@@ -59,9 +60,9 @@ namespace RecursiveTasks
             {
                 sum += a;
                 a++;
-                SumList(a, b);
+                SumList(a, b, sum);
             }
-            else Console.Write($"Сумма чисел равна {sum}");
+            else Console.WriteLine($"Сумма чисел равна - {sum}");
         }
     }
 }

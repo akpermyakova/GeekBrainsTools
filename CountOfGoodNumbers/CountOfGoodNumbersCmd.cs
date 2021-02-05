@@ -36,7 +36,6 @@ namespace CountOfGoodNumbers
             Console.WriteLine($"На выполнение команды затрачено {finish - start}");
 
             Console.ReadKey();
-
         }
 
         static int GetCountOfGoodNumbers(int startValue, int endValue)
