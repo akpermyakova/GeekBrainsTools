@@ -11,8 +11,8 @@
 #endregion
 
 //#define Plus
-//#define Multi
-#define Minus
+#define Multi
+//#define Minus
 
 using System;
 
@@ -22,20 +22,20 @@ namespace StructComplex
     {
         static void Main(string[] args)
         {
-            SComplex complex1;
-            complex1.Re = 1;
-            complex1.Im = 1;
+            var Re1 = 1;
+            var Im1 = 2;
+            CComplex complex1 = new CComplex(Re1, Im1);
 
-            SComplex complex2;
-            complex2.Re = 2;
-            complex2.Im = 2;
+            var Re2 = 3;
+            var Im2 = 4;
+            CComplex complex2 = new CComplex(Re2, Im2);
 
 #if Plus
-            Complex result = complex1.Plus(complex2);
+            CComplex result = complex1.Plus(complex2);
 #elif Multi
-            Complex result = complex1.Multi(complex2);
+            CComplex result = complex1.Multi(complex2);
 #elif Minus
-            SComplex result = complex1.Minus(complex2);
+            CComplex result = complex1.Minus(complex2);
 #endif
             Console.WriteLine(result.AsString());
             Console.ReadKey();
@@ -53,18 +53,43 @@ namespace StructComplex
             Im = 0;
         }
 
-        public CComplex(int _Im, int Re)
+        public CComplex(int Re, int _Im)
         {
             Im = _Im;
             this.Re = Re;
         }
 
-        public CComplex Plus(CComplex x2)
+        public CComplex Plus(CComplex x)
         {
-            CComplex x3 = new CComplex();
-            x3.Im = x2.Im + Im;
-            x3.Re = x2.Re + Re;
-            return x3;
-        }   
+            CComplex y = new CComplex();
+            y.Im = Im + x.Im;
+            y.Re = Re + x.Re;
+            return y;
+        } 
+        
+        public CComplex Multi(CComplex x)
+        {
+            CComplex y = new CComplex();
+            y.Im = Re * x.Im + Im * x.Re;
+            y.Re = Re * x.Re - Im * x.Im;
+            return y;
+        }
+
+        public CComplex Minus(CComplex x)
+        {
+            CComplex y = new CComplex();
+            y.Im = Im - x.Im;
+            y.Re = Re - x.Re;
+            return y;
+        }
+
+        public string AsString()
+        {
+            if (Im == 0) return ($"{Re}");
+            if (Re == 0) return ($"{Im}i");
+            if (Re == 0 && Im == 0) return ($"0");
+            if (Im < 0) return ($"{Re}{Im}i");
+            else return ($"{Re}+{Im}i");
+        }
     }
 }

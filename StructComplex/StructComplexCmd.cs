@@ -25,16 +25,16 @@ namespace StructComplex
         {
             SComplex complex1;
             complex1.Re = 1;
-            complex1.Im = 1;
+            complex1.Im = 2;
 
             SComplex complex2;
-            complex2.Re = 2;
-            complex2.Im = 2;
+            complex2.Re = 3;
+            complex2.Im = 4;
 
 #if Plus
-            Complex result = complex1.Plus(complex2);
+            SComplex result = complex1.Plus(complex2);
 #elif Multi
-            Complex result = complex1.Multi(complex2);
+            SComplex result = complex1.Multi(complex2);
 #elif Minus
             SComplex result = complex1.Minus(complex2);
 #endif
