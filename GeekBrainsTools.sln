@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassComplex", "ClassComple
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SumOfPozitiveNumbersWhileZero", "SumOfGoodNumbersWhileZero\SumOfPozitiveNumbersWhileZero.csproj", "{9FA6732E-4F71-4083-852B-F1D6A4969C7F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FractionsMath", "FractionsMath\FractionsMath.csproj", "{A885938B-CD49-43F3-A7EE-4B740E6084D9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -105,6 +107,10 @@ Global
 		{9FA6732E-4F71-4083-852B-F1D6A4969C7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FA6732E-4F71-4083-852B-F1D6A4969C7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FA6732E-4F71-4083-852B-F1D6A4969C7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A885938B-CD49-43F3-A7EE-4B740E6084D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A885938B-CD49-43F3-A7EE-4B740E6084D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A885938B-CD49-43F3-A7EE-4B740E6084D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A885938B-CD49-43F3-A7EE-4B740E6084D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -125,6 +131,7 @@ Global
 		{E86EDCBF-21BF-41E9-97EA-DC6F20EA6042} = {24AE3257-3F73-48FD-B00B-FB7F75A8E616}
 		{DABBAFDA-6BEA-4058-84C9-4B867573D047} = {24AE3257-3F73-48FD-B00B-FB7F75A8E616}
 		{9FA6732E-4F71-4083-852B-F1D6A4969C7F} = {24AE3257-3F73-48FD-B00B-FB7F75A8E616}
+		{A885938B-CD49-43F3-A7EE-4B740E6084D9} = {24AE3257-3F73-48FD-B00B-FB7F75A8E616}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F52B65D0-3710-40A0-A82D-D4AFA0BA9485}
