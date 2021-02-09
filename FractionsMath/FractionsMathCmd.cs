@@ -37,16 +37,16 @@ namespace FractionsMath
             var fraction2 = CreateFraction();
 #if Plus
             Console.WriteLine("Операция сложения");
-            FractionMath result = fraction1.Plus(fraction2);
+            var result = fraction1.Plus(fraction2);
 #elif Minus
             Console.WriteLine("Операция вычитания");
-            FractionMath result = fraction1.Minus(fraction2);
+            var result = fraction1.Minus(fraction2);
 #elif Multi
             Console.WriteLine("Операция умножения");
-            FractionMath result = fraction1.Multi(fraction2);
+            var result = fraction1.Multi(fraction2);
 #elif Division
             Console.WriteLine("Операция деления");
-            FractionMath result = fraction1.Division(fraction2);
+            var result = fraction1.Division(fraction2);
 #endif
             Console.WriteLine();
             Console.WriteLine($"Результат равен {result}");
@@ -66,7 +66,7 @@ namespace FractionsMath
                 den = GetInt();
                 try
                 {
-                    if (den == 0) throw new ArgumentException("число не должно быть равно нулю");
+                    if (den == 0) throw new ArgumentException("Число не должно быть равно нулю");
                 }
                 catch(ArgumentException e)
                 {
