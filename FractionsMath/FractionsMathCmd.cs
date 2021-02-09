@@ -16,10 +16,10 @@ ArgumentException("Знаменатель не может быть равен 0"
 */
 #endregion
 
-//#define Plus
+#define Plus
 //#define Minus
 //#define Multi
-#define Division
+//#define Division
 
 using System;
 using System.Collections.Generic;
@@ -30,53 +30,53 @@ namespace FractionsMath
     {
         static void Main(string[] args)
         {
-            Console.Write("Введите числитель первой дроби: ");
-            int Num1 = GetInt();
-            Console.Write("Введите знаменатель первой дроби: ");
-            int Den1 = GetInt();
-            Console.Write("Введите числитель второй дроби: ");
-            int Num2 = GetInt();
-            Console.Write("Введите знаменатель второй дроби: ");
-            int Den2 = GetInt();
 
-            FractionMath fraction1 = Enter(Num1, Den1);
-
-            FractionMath fraction2 = Enter(Num2, Den2);
-
+            Console.WriteLine("Первая дробь ");
+            var fraction1 = CreateFraction();
+            Console.WriteLine("Вторая дробь ");
+            var fraction2 = CreateFraction();
 #if Plus
+            Console.WriteLine("Операция сложения");
             FractionMath result = fraction1.Plus(fraction2);
 #elif Minus
+            Console.WriteLine("Операция вычитания");
             FractionMath result = fraction1.Minus(fraction2);
 #elif Multi
+            Console.WriteLine("Операция умножения");
             FractionMath result = fraction1.Multi(fraction2);
 #elif Division
+            Console.WriteLine("Операция деления");
             FractionMath result = fraction1.Division(fraction2);
 #endif
-
-            Console.WriteLine(result.AsString());
+            Console.WriteLine();
+            Console.WriteLine($"Результат равен {result}");
             Console.ReadKey();
         }
 
-        static FractionMath Enter(int num, int den)
+        static FractionMath CreateFraction()
         {
-            bool exception;
-            FractionMath fraction = null;
-            do
+            Console.Write("Введите числитель дроби: ");
+            int num = GetInt();
+            
+            int den = 0;
+
+            while (den == 0)
             {
-                exception = false;
+                Console.Write("Введите знаменатель дроби, который не должен быть равен 0: ");
+                den = GetInt();
                 try
                 {
-                    fraction = new FractionMath(num, den);
+                    if (den == 0) throw new ArgumentException("число не должно быть равно нулю");
                 }
-                catch (ArgumentException e)
+                catch(ArgumentException e)
                 {
-                    exception = true;
-                    Console.WriteLine("Ошибка: " + e.Message);
-                    Console.Write("Повторно введите знаменатель дроби: ");
-                    den = GetInt();
+                    Console.WriteLine(e.Message);
                 }
-            } while (exception);
-
+            }
+            var fraction = new FractionMath(num, den);
+            
+            Console.WriteLine($" ----- Создана дробь {fraction} -----");
+            Console.WriteLine();
             return fraction;
         }
 
@@ -84,7 +84,7 @@ namespace FractionsMath
         {
             while (true)
                 if (!int.TryParse(Console.ReadLine(), out int result))
-                    Console.Write("Неверный формат данных");
+                    Console.Write("Неверный формат данных. Введите значение еще раз: ");
                 else return result;
         }
     }
@@ -97,7 +97,7 @@ namespace FractionsMath
         public FractionMath()
         {
             Num = 0;
-            Den = 0;
+            Den = 1;
         }
 
         public FractionMath(int _Num, int Den)
@@ -150,12 +150,12 @@ namespace FractionsMath
             return y;
         }
 
-        public string AsString()
+        public override string ToString()
         {
             return $"{Num}/{Den}";
         }
 
-        public int Nod(int num, int den)
+        public static int Nod(int num, int den)
         {
             while(num!=0 && den != 0)
             {
